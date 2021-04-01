@@ -1,12 +1,9 @@
 defmodule Checkboxes do
-  import Hound.Helpers.Page
 
-  def first_checkbox() do
-    find_element(:css, "form > input:nth-of-type(1)")
-  end
+  @first_checkbox_selector {:css, "form > input:nth-of-type(1)"}
+  def first_checkbox, do: @first_checkbox_selector
 
-  def second_checkbox() do
-    find_element(:css, "form > input:nth-of-type(2)")
-  end
+  @second_checkbox_selector {:css, "form > input:nth-of-type(2)"}
+  def second_checkbox, do: @second_checkbox_selector
 
 end

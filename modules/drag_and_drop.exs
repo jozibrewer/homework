@@ -2,19 +2,17 @@ defmodule DragAndDrop do
   import Hound.Helpers.Page
   import Hound.Helpers.Element
 
-  def header() do
-    find_element(:css, "h3")
-  end
+  @header_selector {:css, "h3"}
+  def header, do: @header_selector
 
-  def column_a() do
-    find_element(:css, "div#column-a")
-  end
+  @column_a_selector {:css, "div#column-a"}
+  def column_a, do: @column_a_selector
 
-  def column_b() do
-    find_element(:css, "div#column-b")
-  end
+  @column_b_selector {:css, "div#column-b"}
+  def column_b, do: @column_b_selector
 
-  def position(element) do
+  def position(selector) do
+    element = find_element(elem(selector, 0), elem(selector, 1))
     column_header = find_within_element(element, :css, "header")
     visible_text(column_header)
   end
