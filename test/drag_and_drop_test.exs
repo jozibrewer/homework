@@ -1,10 +1,9 @@
 defmodule DragAndDropTest do
+  use Hound.Helpers
+  use ExUnit.Case
   Code.require_file("sut.exs", "modules")
   Code.require_file("drag_and_drop.exs", "modules")
   Code.require_file("extensions.exs", "modules")
-
-  use Hound.Helpers
-  use ExUnit.Case
 
   hound_session()
 
