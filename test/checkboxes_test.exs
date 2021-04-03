@@ -4,7 +4,6 @@ defmodule CheckboxesTest do
   Code.require_file("sut.exs", "modules")
   Code.require_file("checkboxes.exs", "modules")
 
-  # Start hound session and destroy when tests are run
   hound_session()
 
   def set_up() do

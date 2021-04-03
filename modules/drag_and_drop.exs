@@ -12,9 +12,13 @@ defmodule DragAndDrop do
   def column_b, do: @column_b_selector
 
   def position(selector) do
-    element = find_element(elem(selector, 0), elem(selector, 1))
-    column_header = find_within_element(element, :css, "header")
-    visible_text(column_header)
+    # element = find_element(elem(selector, 0), elem(selector, 1))
+    # column_header = find_within_element(element, :css, "header")
+    # visible_text(column_header)
+
+    find_element(elem(selector, 0), elem(selector, 1))
+    |> find_within_element(:css, "header")
+    |> visible_text()
   end
 
 end
