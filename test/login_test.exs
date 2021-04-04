@@ -13,8 +13,11 @@ defmodule LoginTest do
   end
 
   test "can login" do
-    find_element(username())
-    |> fill_field(Sut.tomsmith_username)
+    find_element(username()) |> fill_field(tomsmith_username())
+    find_element(password()) |> fill_field(tomsmith_password())
+    click(login())
+    wait_for_selector?(logout())
+    assert(visible_text(flash_message()) =~ "You logged into a secure area!", "Login message did not display.")
   end
 
   # test "can logout" do

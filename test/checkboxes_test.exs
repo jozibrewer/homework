@@ -16,13 +16,13 @@ defmodule CheckboxesTest do
   end
 
   test "can check checkbox" do
-    click first_checkbox()
-    assert selected?(first_checkbox()), "Checkbox was not checked."
+    click first_checkbox
+    assert selected?(first_checkbox), "Checkbox was not checked."
   end
 
   test "can uncheck checkbox" do
-    click second_checkbox()
-    assert !selected?(second_checkbox()), "Checkbox was not unchecked."
+    click second_checkbox
+    assert !selected?(second_checkbox), "Checkbox was not unchecked."
   end
 
 end
