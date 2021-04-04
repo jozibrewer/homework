@@ -1,27 +1,28 @@
 defmodule CheckboxesTest do
   use Hound.Helpers
   use ExUnit.Case
-  Code.require_file("sut.exs", "modules")
-  Code.require_file("checkboxes.exs", "modules")
+  import Sut
+  import Checkboxes
 
   hound_session()
 
-  def set_up() do
-    navigate_to Sut.app_subpage("checkboxes")
+  # I'm not sure what folks prefer as far as function call with or without () go.
+  # The argument for readability could go either way. I'd defer to the team's preference.
+  # This fixture is intentionally done without () so I can visualize it.
+
+  setup do
+    navigate_to app_subpage("checkboxes")
+    :ok
   end
 
   test "can check checkbox" do
-    set_up()
-
-    click Checkboxes.first_checkbox
-    assert selected?(Checkboxes.first_checkbox), "Checkbox was not checked."
+    click first_checkbox()
+    assert selected?(first_checkbox()), "Checkbox was not checked."
   end
 
   test "can uncheck checkbox" do
-    set_up()
-
-    click Checkboxes.second_checkbox
-    assert !selected?(Checkboxes.second_checkbox), "Checkbox was not unchecked."
+    click second_checkbox()
+    assert !selected?(second_checkbox()), "Checkbox was not unchecked."
   end
 
 end

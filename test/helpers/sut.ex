@@ -8,4 +8,8 @@ defmodule Sut do
     "#{app_url()}#{subpage}"
   end
 
+  def tomsmith_username, do: "tomsmith"
+
+  def tomsmith_password, do: "SuperSecretPassword!"
+
 end
