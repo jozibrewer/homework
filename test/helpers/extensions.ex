@@ -28,6 +28,7 @@ defmodule Extensions do
     Hound.Helpers.Page.find_element(elem(selector_tuple, 0), elem(selector_tuple, 1))
   end
 
+  # Doesn't work.
   def drag_and_drop(element, to_element) do
     move_to(element, 10, 10)
     mouse_down()
