@@ -1,3 +1,8 @@
+## Notes
+
+- Optimized for readability (I sandboxed with a couple different styles). There's room to refine that for sure.
+- Page "object model" is built around the {:strategy, "selector"} tuple rather than the "found" element to better facility negative testing and dynamic waiting.
+
 ## Elixir SDET homework assigment
 
 - Choose at least 3 three of the options in the list on https://the-internet.herokuapp.com/, and automate at least one test case for each option.
