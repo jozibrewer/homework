@@ -15,11 +15,13 @@ defmodule CheckboxesTest do
     :ok
   end
 
+  @tag timeout: 5000
   test "can check checkbox" do
     click first_checkbox()
     assert selected?(first_checkbox()), "Checkbox was not checked."
   end
 
+  @tag timeout: 5000
   test "can uncheck checkbox" do
     click second_checkbox()
     assert !selected?(second_checkbox()), "Checkbox was not unchecked."

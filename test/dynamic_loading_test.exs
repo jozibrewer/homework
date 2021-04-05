@@ -13,6 +13,7 @@ defmodule DynamicLoadingTest do
     :ok
   end
 
+  @tag timeout: 10000
   test "hello world is displayed" do
     click(example_one())
     click(start_button())
@@ -20,6 +21,7 @@ defmodule DynamicLoadingTest do
     assert(element_displayed?(finish_label()), "Element present in the DOM did not display.")
   end
 
+  @tag timeout: 10000
   test "hello world created and is displayed" do
     click(example_two())
     click(start_button())

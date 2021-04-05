@@ -1,6 +1,6 @@
 defmodule Extensions do
   import DateTime
-  import Hound.Helpers.Mouse
+  #import Hound.Helpers.Mouse
   import Hound.Helpers.Element
   import Hound.Helpers.Page
 
@@ -28,12 +28,12 @@ defmodule Extensions do
     Hound.Helpers.Page.find_element(elem(selector_tuple, 0), elem(selector_tuple, 1))
   end
 
-  # Doesn't work.
-  def drag_and_drop(element, to_element) do
-    move_to(element, 10, 10)
-    mouse_down()
-    move_to(to_element, 10, 10)
-    mouse_up()
-  end
+  # # Doesn't work.
+  # def drag_and_drop(element, to_element) do
+  #   move_to(element, 10, 10)
+  #   mouse_down()
+  #   move_to(to_element, 10, 10)
+  #   mouse_up()
+  # end
 
 end
